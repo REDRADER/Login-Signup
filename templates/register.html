@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% block  title %}
+    Register | Laba
+{% endblock  title %}
+{% block content %}
+
+<div class="text-center mt-5">
+        
+    <form class="form-signin " style="max-width: 300px;margin: auto;" method="post" action="register" id="frm">
+      <img class="mb-4" src="static/lalogo.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal text-light">Please Sign Up</h1>
+      <input type="text" id="inputFname" class="form-control mt-3" name="name" placeholder="First Name" required="" autofocus="">
+      
+      <input type="email" id="inputEmail" class="form-control mt-3" name="email" placeholder="Email address" required="" >
+     <input type="password" id="inputPassword" class="form-control mt-3" name="pass" placeholder="Password" required="">
+      <button class="button btn mt-4" type="submit">Sign Up</button>
+      <p class="txtr text mt-4">Already a Member <a class="txta fw-bold" href="{{url_for('login')}}">Login</a></p>
+      <p class="mt-4 mb-3 text-muted">© 2021 Rader Co...</p>
+    </form>
+</div>
+
+{% endblock  %}

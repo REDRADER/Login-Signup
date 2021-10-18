@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block  title %}
+    login | Laba
+{% endblock  title %}
+{% block content %}
+
+{% if msg %}
+<div class="alert alert-danger text-black" role="alert">
+    {{ msg }}
+  </div>
+{% endif %}
+
+
+
+
+<div class="text-center mt-5">
+        
+    <form class="form-signin" style="max-width: 300px;margin: auto;" action="login" method="post">
+      <img class="mb-4" src="static/lalogo.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal text-light">Please sign in</h1>
+     
+      <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required="" autofocus="">
+     
+      <input type="password" id="inputPassword" name="pass" class="form-control mt-4" placeholder="Password" required="">
+      <div class="checkbox mb-3 mt-3 text-light">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+       <input type="hidden"  name="link" value="<%=link%>">
+        <input type="hidden"  name="id" value="<%=id%>">
+      <button class="button btn" type="submit">Sign in</button>
+      <p class="txtr text mt-4" style="margin:0;">Not a Member <a class="txta fw-bold" href="{{url_for('register')}}">Signup</a></p>
+      
+    </form>
+</div>
+
+
+
+{% endblock  %}
